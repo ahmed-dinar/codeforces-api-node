@@ -5,7 +5,9 @@
   "main": "dist/codeforces.js",
   "scripts": {
     "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha  --compilers js:babel-register \"test/**/*\"",
-    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | coveralls"
+    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | coveralls",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engine": "node >= 4.0.0",
   "author": "Ahmed Dinar <madinar.cse@gmail.com>",
@@ -30,7 +32,8 @@
     "lodash": "^4.16.2",
     "qs": "^6.2.1",
     "randomstring": "^1.1.5",
-    "request": "^2.75.0"
+    "request": "^2.75.0",
+    "snyk": "^1.316.1"
   },
   "homepage": "https://github.com/ahmed-dinar/codeforces-api-node",
   "keywords": [
@@ -47,5 +50,6 @@
   "contributors": [],
   "bugs": {
     "url": "https://github.com/ahmed-dinar/codeforces-api-node/issues"
-  }
+  },
+  "snyk": true
 }
